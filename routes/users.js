@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const catchAsync = require('../utilities/catchAsync');
 const User = require('../models/user');
-const passport = require('passport');
 
 router.get('/register', (req, res) => {
     res.render('users/register');
@@ -15,7 +15,7 @@ router.post('/register', catchAsync (async(req, res) =>{
     const registeredUser = await User.register(user, password);
     req.flash('success', 'Welcome to Yelp Camp!');
     res.redirect('/campgrounds');
-    } catch(e){
+    } catch(e) {
         req.flash('error', e.message);
         res.redirect('register');
     }

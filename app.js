@@ -9,7 +9,6 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
-
 const userRoutes = require('./routes/users');
 const campgroundsRoutes = require('./routes/campgrounds');
 const reviewsRoutes = require('./routes/reviews');
